@@ -1,6 +1,4 @@
 import pkg from "mongoose";
-import shortid from "shortid";
-import { hashPassword } from "../helper/helper.js";
 
 const { Schema, model } = pkg;
 

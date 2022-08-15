@@ -6,7 +6,7 @@ import cors from "cors";
 
 const start = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/asia", {
+    await mongoose.connect("mongodb+srv://xlizer1_:mustag252@asiaco.1czqfvx.mongodb.net/?retryWrites=true&w=majority", {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
