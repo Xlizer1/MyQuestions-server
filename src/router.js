@@ -22,7 +22,7 @@ const upload = multer({
 
 const setupRoutes = (app) => {
 
-  app.get('*', (req, res) => res.send("URL Not Found"));
+  
   
   app.post("/admin/login", async (req, res) => {
     const { username, password } = req.body;
@@ -215,6 +215,8 @@ const setupRoutes = (app) => {
         res.send(error.message);
       }
     });
+    
+    app.get('*', (req, res) => res.send("URL Not Found"));
   };
   
   export default setupRoutes;
