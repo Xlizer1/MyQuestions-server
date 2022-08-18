@@ -5,10 +5,7 @@ const { Schema, model } = pkg;
 const ProductSchema = new Schema({
   name: String,
   desc: String,    
-  image: {
-    data: Buffer,
-    contentType: String
-  }
+  image: String
 });
 
 const ProductModel = new model("products", ProductSchema);

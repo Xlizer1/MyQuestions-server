@@ -21,6 +21,41 @@ const upload = multer({
 });
 
 const setupRoutes = (app) => {
+  
+  app.post("/admin/login", async (req, res) => {
+    const { username, password } = req.body;
+  
+    const bodySchema = Joi.object({
+      username: Joi.string().required(),         
+      password: Joi.string().min(6).required()
+   });
+  
+   const validationResult = await bodySchema.validate(req.body);
+  
+   if(validationResult.error){
+      res.statusCode = 400;
+      res.send(validationResult.error.details[0].message);
+      return
+   }
+  
+    const user = await UserModel.findOne({ username });
+  
+    if (!user) {
+  
+      res.send("User NOT Found!!!");
+  
+    } else {
+      //making sure that the password provided belongs to the user registered in the database
+      if (user.password != hashPassword(password, user.salt)) {
+        res.send("bad passowrd");
+      } else {
+        //generating new token
+        const token = jwt.sign({ sub: user._id }, user.salt, { expiresIn: 3000 });
+  
+        res.json({ status: 200, token: token });
+      }
+    }
+  });
 
 /// requseting data from the database
     app.get("/products", async (req, res) => {
@@ -53,13 +88,13 @@ const setupRoutes = (app) => {
           res.send("You Have No Permisson !!!");
           } else {
             //getting data from the body
-            const { name, desc } = req.body;
-            const { image } = req.file.filename;
+            const { name, desc, image } = req.body;
 
             //making sure that all the required data are formed
             const bodySchema = Joi.object({
               name: Joi.string().required(),
-              desc: Joi.string().required()
+              desc: Joi.string().required(),
+              image: Joi.string().required()
             });
 
             const validationResult = await bodySchema.validate(req.body);
@@ -81,10 +116,7 @@ const setupRoutes = (app) => {
                 const newProduct = new ProductModel({
                   name,
                   desc,
-                  image:{
-                    data: image,
-                    contentType: 'image'
-                  }
+                  image
                 });
 
                 await newProduct.save();
@@ -145,44 +177,42 @@ const setupRoutes = (app) => {
       }
 
     });
-  
-    app.post("/admin/login", async (req, res) => {
-      const { username, password } = req.body;
 
-      const bodySchema = Joi.object({
-        username: Joi.string().required(),         
-        password: Joi.string().min(6).required()
-     });
+    app.delete("/admin/product/delete/:id", async (req, res) => {
+      const token = req.headers.authorization;
 
-     const validationResult = await bodySchema.validate(req.body);
+      try {
+        if (!token) {
+          res.statusCode = 401;
+          res.send("You Have No Permisson !!!");
 
-     if(validationResult.error){
-        res.statusCode = 400;
-        res.send(validationResult.error.details[0].message);
-        return
-     }
-
-      const user = await UserModel.findOne({ username });
-
-      if (!user) {
-
-        res.send("User NOT Found!!!");
-
-      } else {
-        //making sure that the password provided belongs to the user registered in the database
-        if (user.password != hashPassword(password, user.salt)) {
-          res.send("bad passowrd");
         } else {
-          //generating new token
-          const token = jwt.sign({ sub: user._id }, user.salt, { expiresIn: 3000 });
+          const decodedToken = jwt.decode(token);
 
-          res.json({ status: 200, token: token });
+          const user = await UserModel.findById(decodedToken.sub);
+
+          jwt.verify(token, user.salt);
+
+          if (!user) {
+            res.statusCode = 401;
+            res.send("You Have No Permisson !!!");
+          } else {
+            const _id = req.params.id;
+            const product = await ProductModel.findByIdAndUpdate(_id);
+            if(!product){
+                res.statusCode = 404;
+                res.send('Product Not Found!!!')
+                } else {
+                  req.statusCode = 200;
+                  res.send('deleted')
+                  return ProductModel.deleteOne()
+                }
+          }
         }
+      } catch (error) {
+        res.send(error.message);
       }
     });
-  
-    app.listen(4000, () => console.log("server is running on port 4000"));
-    
   };
   
   export default setupRoutes;

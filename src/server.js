@@ -1,8 +1,9 @@
 import express from "express";
 import setupRoutes from "./router.js";
-import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
+
+const port = process.env.PORT || 4000;
 
 const start = async () => {
   try {
@@ -17,15 +18,13 @@ const start = async () => {
 
     app.use(express.json());
 
-    app.use(bodyParser.json());
-
-    app.use(bodyParser.urlencoded({ extended: false }));
-
     app.use(express.urlencoded({ extended: false }));
 
     app.use(cors());
 
     setupRoutes(app);
+
+    app.listen(port, () => console.log("server is running on port 4000"));
 
   } catch (error) {
     console.log(error);
