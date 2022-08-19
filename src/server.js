@@ -2,12 +2,13 @@ import express from "express";
 import setupRoutes from "./router.js";
 import mongoose from "mongoose";
 import cors from "cors";
+import { mongoURI } from "./helper/utility.js";
 
 const port = process.env.PORT || 4000;
 
 const start = async () => {
   try {
-    await mongoose.connect("mongodb+srv://xlizer1_:mustag252@asiaco.1czqfvx.mongodb.net/?retryWrites=true&w=majority", {
+    await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });

@@ -1,29 +1,63 @@
 import jwt from "jsonwebtoken";
-import multer from "multer";
 import Joi from "joi";
+import multer from "multer";
+import { GridFsStorage } from "multer-gridfs-storage";
+import Grid from 'gridfs-stream'
+import path from 'path'
+import mongoose from "mongoose";
+import crypto from 'crypto'
 
 import { hashPassword } from "./helper/helper.js";
 import ProductModel from "./models/ProductModel.js";
 import UserModel from "./models/UserModel.js";
+import { mongoURI } from "./helper/utility.js";
 
+//MiddleWare
+const conn = mongoose.createConnection(mongoURI);
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-      cb(null, 'uploads/')
-  },
-  filename: function (req, file, cb) {
-      cb(null, file.originalname);
+let gfs;
+
+conn.once('open', () => {
+  // Init stream
+  gfs = Grid(conn.db, mongoose.mongo);
+  gfs.collection('uploads');
+});
+
+// Create storage engine
+const storage = new GridFsStorage({
+  url: mongoURI,
+  file: (req, file) => {
+    return new Promise((resolve, reject) => {
+      crypto.randomBytes(16, (err, buf) => {
+        if (err) {
+          return reject(err);
+        }
+        const filename = buf.toString('hex') + path.extname(file.originalname);
+        const fileInfo = {
+          filename: filename,
+          bucketName: 'uploads'
+        };
+        resolve(fileInfo);
+      });
+    });
   }
 });
+const upload = multer({ storage });
 
-const upload = multer({
-  storage: storage
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//       cb(null, 'uploads/')
+//   },
+//   filename: function (req, file, cb) {
+//       cb(null, file.originalname);
+//   }
+// });
 
+// const upload = multer({
+//   storage: storage
+// });
+//////////////
 const setupRoutes = (app) => {
-
-  
-  
   app.post("/admin/login", async (req, res) => {
     const { username, password } = req.body;
   
@@ -59,14 +93,14 @@ const setupRoutes = (app) => {
     }
   });
 
-/// requseting data from the database
+    /// requseting data from the database
     app.get("/products", async (req, res) => {
       const products = await ProductModel.find({});
 
-      res.send(products);
+      res.send(products)
     });
 
-/// Adding new product to the database
+    /// Adding new product to the database
     app.post("/admin/product/new", upload.single('image'), async (req, res) => {
       //getting token from the header of the request
       const token = req.headers.authorization;
@@ -90,13 +124,13 @@ const setupRoutes = (app) => {
           res.send("You Have No Permisson !!!");
           } else {
             //getting data from the body
-            const { name, desc, image } = req.body;
+            const { name, desc } = req.body;
+            const { image } = req.file.filename;
 
             //making sure that all the required data are formed
             const bodySchema = Joi.object({
               name: Joi.string().required(),
               desc: Joi.string().required(),
-              image: Joi.string().required()
             });
 
             const validationResult = await bodySchema.validate(req.body);
@@ -118,12 +152,16 @@ const setupRoutes = (app) => {
                 const newProduct = new ProductModel({
                   name,
                   desc,
-                  image
+                  image: {
+                    data: image,
+                    contentType: 'image/jpeg'
+                  }
                 });
 
                 await newProduct.save();
 
-                res.send(newProduct);
+                res.send('added');
+
               } catch (error){
                 res.send(error.message);
               }
