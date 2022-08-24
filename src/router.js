@@ -1,62 +1,10 @@
 import jwt from "jsonwebtoken";
 import Joi from "joi";
-import multer from "multer";
-import { GridFsStorage } from "multer-gridfs-storage";
-import Grid from 'gridfs-stream'
-import path from 'path'
-import mongoose from "mongoose";
-import crypto from 'crypto'
 
 import { hashPassword } from "./helper/helper.js";
 import ProductModel from "./models/ProductModel.js";
 import UserModel from "./models/UserModel.js";
-import { mongoURI } from "./helper/utility.js";
 
-//MiddleWare
-const conn = mongoose.createConnection(mongoURI);
-
-let gfs;
-
-conn.once('open', () => {
-  // Init stream
-  gfs = Grid(conn.db, mongoose.mongo);
-  gfs.collection('uploads');
-});
-
-// Create storage engine
-const storage = new GridFsStorage({
-  url: mongoURI,
-  file: (req, file) => {
-    return new Promise((resolve, reject) => {
-      crypto.randomBytes(16, (err, buf) => {
-        if (err) {
-          return reject(err);
-        }
-        const filename = buf.toString('hex') + path.extname(file.originalname);
-        const fileInfo = {
-          filename: filename,
-          bucketName: 'uploads'
-        };
-        resolve(fileInfo);
-      });
-    });
-  }
-});
-const upload = multer({ storage });
-
-// const storage = multer.diskStorage({
-//   destination: function (req, file, cb) {
-//       cb(null, 'uploads/')
-//   },
-//   filename: function (req, file, cb) {
-//       cb(null, file.originalname);
-//   }
-// });
-
-// const upload = multer({
-//   storage: storage
-// });
-//////////////
 const setupRoutes = (app) => {
   app.post("/admin/login", async (req, res) => {
     const { username, password } = req.body;
@@ -101,7 +49,7 @@ const setupRoutes = (app) => {
     });
 
     /// Adding new product to the database
-    app.post("/admin/product/new", upload.single('image'), async (req, res) => {
+    app.post("/admin/product/new", multer.single('image'), async (req, res) => {
       //getting token from the header of the request
       const token = req.headers.authorization;
 
@@ -124,13 +72,13 @@ const setupRoutes = (app) => {
           res.send("You Have No Permisson !!!");
           } else {
             //getting data from the body
-            const { name, desc } = req.body;
-            const { image } = req.file.filename;
+            const { title, desc, image } = req.body;
 
             //making sure that all the required data are formed
             const bodySchema = Joi.object({
-              name: Joi.string().required(),
+              title: Joi.string().required(),
               desc: Joi.string().required(),
+              image: Joi.string().required()
             });
 
             const validationResult = await bodySchema.validate(req.body);
@@ -150,12 +98,9 @@ const setupRoutes = (app) => {
             } else {
               try {
                 const newProduct = new ProductModel({
-                  name,
+                  title,
                   desc,
-                  image: {
-                    data: image,
-                    contentType: 'image/jpeg'
-                  }
+                  image
                 });
 
                 await newProduct.save();
@@ -195,20 +140,15 @@ const setupRoutes = (app) => {
           } else {
             //getting the product ID from the parameter
             const productId = req.params.id;
-            const { name, desc } = req.body;
-            const { image } = req.file.filename;
+            const { name, desc, image } = req.body;
             //this code finds the specific product using the ID from request paramter
             const updatedProduct = await ProductModel.updateOne({ _id: productId }, { 
               $set:{ 
-                name: name, 
+                name: name,
                 desc: desc,
-                image:{
-                  data: image,
-                  contentType: 'image'
-                }
+                image: image
               }
             })
-
             res.send(updatedProduct);
           }
         }
