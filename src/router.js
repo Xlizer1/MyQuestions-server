@@ -45,7 +45,7 @@ const setupRoutes = (app) => {
     app.get("/products", async (req, res) => {
       const products = await ProductModel.find({});
 
-      res.send('bla bla bla')
+      res.send(products)
     });
 
     /// Adding new product to the database
