@@ -49,7 +49,7 @@ const setupRoutes = (app) => {
     });
 
     /// Adding new product to the database
-    app.post("/admin/product/new", multer.single('image'), async (req, res) => {
+    app.post("/admin/product/new", async (req, res) => {
       //getting token from the header of the request
       const token = req.headers.authorization;
 
