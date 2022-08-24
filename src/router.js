@@ -90,7 +90,7 @@ const setupRoutes = (app) => {
               return
             }
             //making sure the data that entered are not in the database
-            const productExist = await ProductModel.findOne({ name });
+            const productExist = await ProductModel.findOne({ title });
 
             if(productExist){
               res.statusCode = 400;
@@ -106,7 +106,6 @@ const setupRoutes = (app) => {
                 await newProduct.save();
 
                 res.send('added');
-
               } catch (error){
                 res.send(error.message);
               }
