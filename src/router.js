@@ -139,11 +139,11 @@ const setupRoutes = (app) => {
           } else {
             //getting the product ID from the parameter
             const productId = req.params.id;
-            const { name, desc, image } = req.body;
+            const { title, desc, image } = req.body;
             //this code finds the specific product using the ID from request paramter
             const updatedProduct = await ProductModel.updateOne({ _id: productId }, { 
               $set:{ 
-                name: name,
+                title: title,
                 desc: desc,
                 image: image
               }
@@ -183,7 +183,7 @@ const setupRoutes = (app) => {
                 res.send('Product Not Found!!!')
                 } else {
                   req.statusCode = 200;
-                  res.send('deleted')
+                  res.send(product)
                   return ProductModel.deleteOne()
                 }
           }
