@@ -34,7 +34,7 @@ const setupRoutes = (app) => {
         res.send("bad passowrd");
       } else {
         //generating new token
-        const token = jwt.sign({ sub: user._id }, user.salt, { expiresIn: 3000 });
+        const token = jwt.sign({ sub: user._id }, user.salt, { expiresIn: 604800000 });
   
         res.json({ status: 200, token: token });
       }
