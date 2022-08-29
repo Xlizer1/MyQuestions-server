@@ -176,15 +176,15 @@ const setupRoutes = (app) => {
             res.statusCode = 401;
             res.send("You Have No Permisson !!!");
           } else {
-            const _id = req.params.id;
-            const product = await ProductModel.findByIdAndUpdate(_id);
+            const id = req.params.id;
+            const product = await ProductModel.findById(id);
             if(!product){
                 res.statusCode = 404;
                 res.send('Product Not Found!!!')
                 } else {
                   req.statusCode = 200;
-                  res.send(product)
-                  return ProductModel.deleteOne()
+                  res.send(`product ${product.title} deleted`);
+                  return ProductModel.deleteOne({ _id: id });
                 }
           }
         }
