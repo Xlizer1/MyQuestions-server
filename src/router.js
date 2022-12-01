@@ -7,7 +7,7 @@ import NewsModel from "./models/NewsModel.js";
 import UserModel from "./models/UserModel.js";
 
 const setupRoutes = (app) => {
-    app.post("/my-questions/login", async (req, res) => {
+    app.post("/login", async (req, res) => {
       const { email, password } = req.body;
     
       const bodySchema = Joi.object({
@@ -49,20 +49,20 @@ const setupRoutes = (app) => {
     });
 
     /// requseting data from the database
-    app.get("/my-questions/questions", async (req, res) => {
+    app.get("/questions", async (req, res) => {
       const questions = await QuestionModel.find({});
 
       res.send(questions);
     });
 
-    app.get("/my-questions/news", async (req, res) => {
+    app.get("/news", async (req, res) => {
       const news = await NewsModel.find({});
 
       res.send(news);
     });
 
     /// Adding new product to the database
-    app.post("/my-questions/admin/question/new", async (req, res) => {
+    app.post("/admin/question/new", async (req, res) => {
       //getting token from the header of the request
       const token = req.headers.authorization;
 
@@ -133,7 +133,7 @@ const setupRoutes = (app) => {
     });
 
   /// Updating data in specific product
-    app.put("/my-questions/admin/question/update/:id", async (req, res) => {
+    app.put("/admin/question/update/:id", async (req, res) => {
       const token = req.headers.authorization;
 
       try {
@@ -173,7 +173,7 @@ const setupRoutes = (app) => {
 
     });
 
-    app.delete("/my-questions/admin/question/delete/:id", async (req, res) => {
+    app.delete("/admin/question/delete/:id", async (req, res) => {
       const token = req.headers.authorization;
 
       try {
@@ -209,7 +209,7 @@ const setupRoutes = (app) => {
       }
     });
 
-    app.post("/my-questions/admin/news/new", async (req, res) => {
+    app.post("/admin/news/new", async (req, res) => {
       //getting token from the header of the request
       const token = req.headers.authorization;
 
@@ -275,7 +275,7 @@ const setupRoutes = (app) => {
       }
     });
 
-    app.delete("/my-questions/admin/news/delete/:id", async (req, res) => {
+    app.delete("/admin/news/delete/:id", async (req, res) => {
       const token = req.headers.authorization;
 
       try {
