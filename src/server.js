@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import { mongoURI } from "./helper/utility.js";
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8080;
 
 const start = async () => {
   try {
@@ -25,7 +25,7 @@ const start = async () => {
 
     setupRoutes(app);
 
-    app.listen(port, () => console.log("server is running on port 4000"));
+    app.listen(port, () => console.log("server is running on port 8080"));
 
   } catch (error) {
     console.log(error);

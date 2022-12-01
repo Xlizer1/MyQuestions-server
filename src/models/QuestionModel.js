@@ -5,9 +5,10 @@ const { Schema, model } = pkg;
 const QuestionSchema = new Schema({
   title: String,
   answer: String,
-  KeyWord: String
+  keyWord: String,
+  youtubeLink: String,
 });
 
-const QuestionsModel = new model("products", QuestionSchema);
+const QuestionModel = new model("question", QuestionSchema);
 
-export default QuestionsModel;
+export default QuestionModel;

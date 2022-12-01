@@ -7,6 +7,6 @@ const NewsSchema = new Schema({
   image: String
 });
 
-const NewsModel = new model("products", NewsSchema);
+const NewsModel = new model("news", NewsSchema);
 
 export default NewsModel;
