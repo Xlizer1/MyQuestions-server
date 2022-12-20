@@ -92,6 +92,7 @@ const setupRoutes = (app) => {
               title: Joi.string().required(),
               answer: Joi.string().required(),
               keyWord: Joi.string().required(),
+              youtubeLink,
             });
 
             const validationResult = await bodySchema.validate(req.body);
