@@ -279,7 +279,6 @@ const setupRoutes = (app) => {
       const token = req.headers.authorization;
       
       try {
-        res.send(token);
         if (!token) {
           res.statusCode = 401;
           res.send("You Have No Permisson !!!");
