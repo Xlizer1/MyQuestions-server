@@ -277,8 +277,9 @@ const setupRoutes = (app) => {
 
     app.delete("/admin/news/delete/:id", async (req, res) => {
       const token = req.headers.authorization;
-
+      
       try {
+        res.send(token);
         if (!token) {
           res.statusCode = 401;
           res.send("You Have No Permisson !!!");
