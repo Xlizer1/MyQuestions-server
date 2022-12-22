@@ -120,7 +120,7 @@ const setupRoutes = (app) => {
 
                 await newQuestion.save();
 
-                res.send(newQuestion);
+                res.send(`تم اضافة السؤال: \n newQuestion`);
               } catch (error){
                 res.send(error.message);
               }
@@ -164,7 +164,7 @@ const setupRoutes = (app) => {
                 youtubeLink: youtubeLink
               }
             })
-            res.send(updatedQuestion);
+            res.send(`تم تعديل السؤال: \n updatedQuestion`);
           }
         }
       } catch (error) {
@@ -199,7 +199,7 @@ const setupRoutes = (app) => {
                 res.send('Question Not Found!!!')
                 } else {
                   req.statusCode = 200;
-                  res.send(`question ${question.title} deleted`);
+                  res.send(`تم حذف السؤال: \n ${question.title}`);
                   return QuestionModel.deleteOne({ _id: id });
                 }
           }
@@ -301,7 +301,7 @@ const setupRoutes = (app) => {
                 res.send('News Not Found!!!');
                 } else {
                   req.statusCode = 200;
-                  res.send(`${news.title} deleted`);
+                  res.send(`تم حذف \n ${news.title}`);
                   return NewsModel.deleteOne({ _id: id });
                 }
           }
