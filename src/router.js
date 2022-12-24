@@ -274,6 +274,43 @@ const setupRoutes = (app) => {
         res.send(error.message);
       }
     });
+    
+       app.put("/admin/news/update/:id", async (req, res) => {
+           const token = req.headers.authorization;
+
+           try {
+            if (!token) {
+                res.statusCode = 401;
+                res.send("You Have No Permisson !!!");
+
+            } else {
+            const decodedToken = jwt.decode(token);
+
+            const user = await UserModel.findById(decodedToken.sub);
+
+            jwt.verify(token, user.salt);
+
+            if (!user) {
+              res.statusCode = 401;
+              res.send("You Have No Permisson !!!");
+            } else {
+            //getting the product ID from the parameter
+                const newsId = req.params.id;
+                const { title, image } = req.body;
+            //this code finds the specific product using the ID from request paramter
+                const updatedNews = await NewsModel.updateOne({ _id: newsId }, { 
+                  $set:{ 
+                    title: title,
+                    image: image
+                  }
+                })
+            res.send(`تم تعديل الخبر: \n updatedNews`);
+          }
+        }
+      } catch (error) {
+        res.send(error.message);
+      }
+    });
 
     app.delete("/admin/news/delete/:id", async (req, res) => {
       const token = req.headers.authorization;
