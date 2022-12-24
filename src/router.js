@@ -120,7 +120,7 @@ const setupRoutes = (app) => {
 
                 await newQuestion.save();
 
-                res.send(`تم اضافة السؤال: \n newQuestion`);
+                res.send(`تم اضافة السؤال: \n ${newQuestion}`);
               } catch (error){
                 res.send(error.message);
               }
