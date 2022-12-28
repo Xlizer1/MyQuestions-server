@@ -80,7 +80,7 @@ const setupRoutes = (app) => {
           jwt.verify(token, user.salt);
 
           if (!user) {
-          res.statusCode = 401;
+          res.statusCode = 403;
 
           res.send("You Have No Permisson !!!");
           } else {
@@ -98,7 +98,7 @@ const setupRoutes = (app) => {
             const validationResult = await bodySchema.validate(req.body);
 
             if(validationResult.error){
-              res.statusCode = 400;
+              res.statusCode = 412;
 
               res.send(validationResult.error.details[0].message);
               return
@@ -107,7 +107,7 @@ const setupRoutes = (app) => {
             const questionExist = await QuestionModel.findOne({ title });
 
             if(questionExist){
-              res.statusCode = 400;
+              res.statusCode = 202;
               res.send('Question Already Exist!!!')
             } else {
               try {
@@ -120,7 +120,7 @@ const setupRoutes = (app) => {
 
                 await newQuestion.save();
 
-                res.send(`تم اضافة السؤال: \n ${newQuestion}`);
+                res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
               } catch (error){
                 res.send(error.message);
               }
@@ -149,7 +149,7 @@ const setupRoutes = (app) => {
           jwt.verify(token, user.salt);
 
           if (!user) {
-            res.statusCode = 401;
+            res.statusCode = 403;
             res.send("You Have No Permisson !!!");
           } else {
             //getting the product ID from the parameter
@@ -164,7 +164,7 @@ const setupRoutes = (app) => {
                 youtubeLink: youtubeLink
               }
             })
-            res.send(`تم تعديل السؤال: \n updatedQuestion`);
+            res.send(`تم تعديل السؤال: \n ${updatedQuestion.title}`);
           }
         }
       } catch (error) {
@@ -189,7 +189,7 @@ const setupRoutes = (app) => {
           jwt.verify(token, user.salt);
 
           if (!user) {
-            res.statusCode = 401;
+            res.statusCode = 403;
             res.send("You Have No Permisson !!!");
           } else {
             const id = req.params.id;
@@ -227,7 +227,7 @@ const setupRoutes = (app) => {
           jwt.verify(token, user.salt);
 
           if (!user) {
-          res.statusCode = 401;
+          res.statusCode = 403;
 
           res.send("You Have No Permisson !!!");
           } else {
@@ -243,7 +243,7 @@ const setupRoutes = (app) => {
             const validationResult = await bodySchema.validate(req.body);
 
             if(validationResult.error){
-              res.statusCode = 400;
+              res.statusCode = 412;
 
               res.send(validationResult.error.details[0].message);
               return
@@ -252,7 +252,7 @@ const setupRoutes = (app) => {
             const newsExist = await NewsModel.findOne({ title });
 
             if(newsExist){
-              res.statusCode = 400;
+              res.statusCode = 202;
               res.send('News Already Exist!!!')
             } else {
               try {
@@ -262,8 +262,8 @@ const setupRoutes = (app) => {
                 });
 
                 await newNews.save();
-
-                res.send(newNews);
+                req.statusCode = 200;
+                res.send(`تم إضافة الخبر: \n ${newNews.title}`);
               } catch (error){
                 res.send(error.message);
               }
@@ -291,7 +291,7 @@ const setupRoutes = (app) => {
             jwt.verify(token, user.salt);
 
             if (!user) {
-              res.statusCode = 401;
+              res.statusCode = 403;
               res.send("You Have No Permisson !!!");
             } else {
             //getting the product ID from the parameter
@@ -304,7 +304,7 @@ const setupRoutes = (app) => {
                     image: image
                   }
                 })
-            res.send(`تم تعديل الخبر: \n updatedNews`);
+            res.send(`تم تعديل الخبر: \n ${updatedNews.title}`);
           }
         }
       } catch (error) {
@@ -328,7 +328,7 @@ const setupRoutes = (app) => {
           jwt.verify(token, user.salt);
 
           if (!user) {
-            res.statusCode = 401;
+            res.statusCode = 403;
             res.send("You Have No Permisson !!!");
           } else {
             const id = req.params.id;
@@ -338,7 +338,7 @@ const setupRoutes = (app) => {
                 res.send('News Not Found!!!');
                 } else {
                   req.statusCode = 200;
-                  res.send(`تم حذف \n ${news.title}`);
+                  res.send(`تم حذف الخبر \n ${news.title}`);
                   return NewsModel.deleteOne({ _id: id });
                 }
           }
