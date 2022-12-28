@@ -27,12 +27,12 @@ const setupRoutes = (app) => {
     
       if (!user) {
     
-        res.send("User NOT Found!!!");
+        res.send("المستخدم غير موجود!!!");
     
       } else {
         //making sure that the password provided belongs to the user registered in the database
         if (user.password != hashPassword(password, user.salt)) {
-          res.send("bad passowrd");
+          res.send("كلمة سر خاطئة");
         } else {
           //generating new token
           if(user.admin) {
@@ -70,7 +70,7 @@ const setupRoutes = (app) => {
         if (!token) {
           res.statusCode = 401;
 
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
         } else {
           //decoding the token using jwt and making sure that the user Id is exist in the database
           const decodedToken = jwt.decode(token);
@@ -82,7 +82,7 @@ const setupRoutes = (app) => {
           if (!user) {
           res.statusCode = 403;
 
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
           } else {
             //getting data from the body
             const { title, answer, keyWord, youtubeLink } = req.body;
@@ -108,7 +108,7 @@ const setupRoutes = (app) => {
 
             if(questionExist){
               res.statusCode = 202;
-              res.send('Question Already Exist!!!')
+              res.send('السؤال موجود بالفعل!!!')
             } else {
               try {
                 const newQuestion = new QuestionModel({
@@ -139,7 +139,7 @@ const setupRoutes = (app) => {
       try {
         if (!token) {
           res.statusCode = 401;
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
 
         } else {
           const decodedToken = jwt.decode(token);
@@ -150,7 +150,7 @@ const setupRoutes = (app) => {
 
           if (!user) {
             res.statusCode = 403;
-            res.send("You Have No Permisson !!!");
+            res.send("ليست لديك الصلاحية !!!");
           } else {
             //getting the product ID from the parameter
             const questionId = req.params.id;
@@ -179,7 +179,7 @@ const setupRoutes = (app) => {
       try {
         if (!token) {
           res.statusCode = 401;
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
 
         } else {
           const decodedToken = jwt.decode(token);
@@ -190,13 +190,13 @@ const setupRoutes = (app) => {
 
           if (!user) {
             res.statusCode = 403;
-            res.send("You Have No Permisson !!!");
+            res.send("ليست لديك الصلاحية !!!");
           } else {
             const id = req.params.id;
             const question = await QuestionModel.findById(id);
             if(!question){
                 res.statusCode = 404;
-                res.send('Question Not Found!!!')
+                res.send('لم يتم ايجاد السؤال !!!')
                 } else {
                   req.statusCode = 200;
                   res.send(`تم حذف السؤال: \n ${question.title}`);
@@ -217,7 +217,7 @@ const setupRoutes = (app) => {
         if (!token) {
           res.statusCode = 401;
 
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
         } else {
           //decoding the token using jwt and making sure that the user Id is exist in the database
           const decodedToken = jwt.decode(token);
@@ -229,7 +229,7 @@ const setupRoutes = (app) => {
           if (!user) {
           res.statusCode = 403;
 
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
           } else {
             //getting data from the body
             const { title, image } = req.body;
@@ -253,7 +253,7 @@ const setupRoutes = (app) => {
 
             if(newsExist){
               res.statusCode = 202;
-              res.send('News Already Exist!!!')
+              res.send('الخبر موجود بالفعل !!!')
             } else {
               try {
                 const newNews = new NewsModel({
@@ -281,7 +281,7 @@ const setupRoutes = (app) => {
            try {
             if (!token) {
                 res.statusCode = 401;
-                res.send("You Have No Permisson !!!");
+                res.send("ليست لديك الصلاحية !!!");
 
             } else {
             const decodedToken = jwt.decode(token);
@@ -292,7 +292,7 @@ const setupRoutes = (app) => {
 
             if (!user) {
               res.statusCode = 403;
-              res.send("You Have No Permisson !!!");
+              res.send("ليست لديك الصلاحية !!!");
             } else {
             //getting the product ID from the parameter
                 const newsId = req.params.id;
@@ -318,7 +318,7 @@ const setupRoutes = (app) => {
       try {
         if (!token) {
           res.statusCode = 401;
-          res.send("You Have No Permisson !!!");
+          res.send("ليست لديك الصلاحية !!!");
 
         } else {
           const decodedToken = jwt.decode(token);
@@ -329,13 +329,13 @@ const setupRoutes = (app) => {
 
           if (!user) {
             res.statusCode = 403;
-            res.send("You Have No Permisson !!!");
+            res.send("ليست لديك الصلاحية !!!");
           } else {
             const id = req.params.id;
             const news = await NewsModel.findById(id);
             if(!news){
                 res.statusCode = 404;
-                res.send('News Not Found!!!');
+                res.send('لم يتم ايجاد الخبر !!!');
                 } else {
                   req.statusCode = 200;
                   res.send(`تم حذف الخبر \n ${news.title}`);
