@@ -237,7 +237,7 @@ const setupRoutes = (app) => {
             //making sure that all the required data are formed
             const bodySchema = Joi.object({
               title: Joi.string().required(),
-              image: Joi.string(),
+              image,
             });
 
             const validationResult = await bodySchema.validate(req.body);
