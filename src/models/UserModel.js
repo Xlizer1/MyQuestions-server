@@ -5,7 +5,8 @@ import shortId from "shortid";
 const { Schema, model } = pkg;
 
 const UserSchema = new Schema({
-  username: String,
+  firstName: String,
+  lastName: String,
   password: String,
   email: String,
   salt: String,
