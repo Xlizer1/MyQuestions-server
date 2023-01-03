@@ -47,6 +47,41 @@ const setupRoutes = (app) => {
         }
       }
     });
+    
+  app.post("/register", async (req, res) => {
+    const { firstName, lastName, email, password } = req.body;
+        
+    const bodySchema = Joi.object({
+        firstName: Joi.string().required(),
+        lastName: Joi.string().required(),
+        email: Joi.string().email().required(),         
+        password: Joi.string().min(6).required()
+    });
+    
+    const validationResult = await bodySchema.validate(req.body);
+    
+    if(validationResult.error){
+        res.statusCode = 400;
+        res.send(validationResult.error.details[0].message);
+        return
+    }
+      
+    const user = await UserModel.findOne({ email });
+
+    if (!user) {
+      const newUser = new UserModel({
+        firstName,
+        lastName,
+        email,
+        password,
+      });
+
+      await newUser.save();
+      res.send(newUser);
+    } else {
+      res.send("المستخدم موجود بالفعل !!!");
+    }
+  });
 
     /// requseting data from the database
     app.get("/questions", async (req, res) => {
@@ -108,7 +143,7 @@ const setupRoutes = (app) => {
 
             if(questionExist){
               res.statusCode = 202;
-              res.send('السؤال موجود بالفعل!!!')
+              res.send('السؤال موجود بالفعل !!!')
             } else {
               try {
                 const newQuestion = new QuestionModel({
