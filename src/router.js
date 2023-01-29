@@ -153,7 +153,7 @@ const setupRoutes = (app) => {
                   answer,
                   material,
                   year,
-                  trun,
+                  turn,
                   youtubeLink
                 });
 
