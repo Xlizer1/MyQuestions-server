@@ -120,13 +120,15 @@ const setupRoutes = (app) => {
           res.send("ليست لديك الصلاحية !!!");
           } else {
             //getting data from the body
-            const { title, answer, keyWord, youtubeLink } = req.body;
+            const { title, answer, material, year, turn, youtubeLink } = req.body;
 
             //making sure that all the required data are formed
             const bodySchema = Joi.object({
               title: Joi.string().required(),
               answer: Joi.string().required(),
-              keyWord: Joi.string().required(),
+              material: Joi.string().required(),
+              year: Joi.string().required(),
+              turn: Joi.string().required(),
               youtubeLink,
             });
 
@@ -149,7 +151,9 @@ const setupRoutes = (app) => {
                 const newQuestion = new QuestionModel({
                   title,
                   answer,
-                  keyWord,
+                  material,
+                  year,
+                  trun,
                   youtubeLink
                 });
 
@@ -189,13 +193,15 @@ const setupRoutes = (app) => {
           } else {
             //getting the product ID from the parameter
             const questionId = req.params.id;
-            const { title, desc, keyWord, youtubeLink } = req.body;
+            const { title, desc, material, year, turn, youtubeLink } = req.body;
             //this code finds the specific product using the ID from request paramter
             const updatedQuestion = await QuestionModel.updateOne({ _id: questionId }, { 
               $set:{ 
                 title: title,
                 desc: desc,
-                keyWord: keyWord,
+                material: material,
+                year: year,
+                turn: turn,
                 youtubeLink: youtubeLink
               }
             })
