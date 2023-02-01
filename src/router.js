@@ -28,11 +28,13 @@ const setupRoutes = (app) => {
       if (!user) {
     
         res.send("المستخدم غير موجود!!!");
+        res.statusCode = 401;
     
       } else {
         //making sure that the password provided belongs to the user registered in the database
         if (user.password != hashPassword(password, user.salt)) {
           res.send("كلمة سر خاطئة");
+          res.statusCode = 401;
         } else {
           //generating new token
           if(user.admin) {
@@ -80,6 +82,7 @@ const setupRoutes = (app) => {
       res.send(newUser);
     } else {
       res.send("المستخدم موجود بالفعل !!!");
+      res.statusCode = 401;
     }
   });
 
