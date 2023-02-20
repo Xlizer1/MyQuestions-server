@@ -8,6 +8,7 @@ const port = process.env.PORT || 8080;
 
 const start = async () => {
   try {
+    mongoose.set('strictQuery', false);
     await mongoose.connect(mongoURI, {
       useNewUrlParser: true,
       useUnifiedTopology: true
