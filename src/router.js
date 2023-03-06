@@ -148,7 +148,7 @@ const setupRoutes = (app) => {
             answer: Joi.string().required(),
             unit: Joi.string().required(),
             material: Joi.string().required(),
-            year: Joi.string().required(),
+            year: Joi.array().required(),
             turn: Joi.string().required(),
             youtubeLink,
           });
