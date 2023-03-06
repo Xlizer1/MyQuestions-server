@@ -155,9 +155,7 @@ const setupRoutes = (app) => {
           const validationResult = await bodySchema.validate(req.body);
 
           if (validationResult.error) {
-            res.statusCode = 412;
-
-            res.send(validationResult.error.details[0].message);
+            res.status(412).send(validationResult.error.details[0].message);
             return;
           }
           //making sure the data that entered are not in the database
