@@ -96,9 +96,6 @@ const setupRoutes = (app) => {
 
     if (req.query.unit) {
       conditions.unit = { $in: [req.query.unit] };
-      if (req.query.year) {
-        conditions.year = { $in: [req.query.year] };
-      }
       if (req.query.turn) {
         conditions.turn = { $in: [req.query.turn] };
       }
@@ -142,13 +139,15 @@ const setupRoutes = (app) => {
           const { title, answer, unit, material, year, turn, youtubeLink } =
             req.body;
 
+          const parseedYears = JSON.parse(year);
+
           //making sure that all the required data are formed
           const bodySchema = Joi.object({
             title: Joi.string().required(),
             answer: Joi.string().required(),
             unit: Joi.string().required(),
             material: Joi.string().required(),
-            year: Joi.array().required(),
+            year: Joi.string().required(),
             turn: Joi.string().required(),
             youtubeLink,
           });
@@ -174,14 +173,17 @@ const setupRoutes = (app) => {
                 answer,
                 unit,
                 material,
-                year,
+                parseedYears,
                 turn,
                 youtubeLink,
               });
 
               await newQuestion.save();
 
-              res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
+              console.log(newQuestion);
+              res.send(newQuestion);
+
+              // res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
             } catch (error) {
               res.send(error.message);
             }
