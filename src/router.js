@@ -179,9 +179,8 @@ const setupRoutes = (app) => {
               await newQuestion.save();
 
               console.log(newQuestion);
-              res.send(newQuestion);
-
-              // res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
+  
+              res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
             } catch (error) {
               res.send(error.message);
             }
