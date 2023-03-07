@@ -7,7 +7,7 @@ const QuestionSchema = new Schema({
   answer: String,
   unit: String,
   material: String,
-  parseedYears: Array,
+  year: Array,
   turn: String,
   youtubeLink: String,
 });
