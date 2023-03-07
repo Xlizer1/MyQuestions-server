@@ -139,7 +139,7 @@ const setupRoutes = (app) => {
           const { title, answer, unit, material, year, turn, youtubeLink } =
             req.body;
 
-          const parseedYears = JSON.parse(year);
+          //const parseedYears = JSON.parse(year);
 
           //making sure that all the required data are formed
           const bodySchema = Joi.object({
@@ -147,7 +147,7 @@ const setupRoutes = (app) => {
             answer: Joi.string().required(),
             unit: Joi.string().required(),
             material: Joi.string().required(),
-            year: Joi.string().required(),
+            year: Joi.array().required(),
             turn: Joi.string().required(),
             youtubeLink,
           });
@@ -171,7 +171,7 @@ const setupRoutes = (app) => {
                 answer,
                 unit,
                 material,
-                parseedYears,
+                year,
                 turn,
                 youtubeLink,
               });
