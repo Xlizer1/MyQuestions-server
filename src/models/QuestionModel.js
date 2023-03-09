@@ -8,7 +8,7 @@ const QuestionSchema = new Schema({
   unit: String,
   material: String,
   year: Array,
-  turn: String,
+  //turn: String,
   youtubeLink: String,
 });
 
