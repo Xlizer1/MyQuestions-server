@@ -154,7 +154,7 @@ const setupRoutes = (app) => {
           const validationResult = await bodySchema.validate(req.body);
 
           if (validationResult.error) {
-            res.status(412).send(validationResult.error.details[0].message);
+            res.send(validationResult.error.details[0].message);
             return;
           }
           //making sure the data that entered are not in the database
@@ -175,10 +175,8 @@ const setupRoutes = (app) => {
               });
 
               await newQuestion.save();
-
-              console.log(newQuestion);
   
-              res.send(`تم اضافة السؤال: \n ${newQuestion.title}`);
+              res.send(newQuestion);
             } catch (error) {
               res.send(error.message);
             }
