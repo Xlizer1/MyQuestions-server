@@ -136,7 +136,7 @@ const setupRoutes = (app) => {
           res.send("ليست لديك الصلاحية !!!");
         } else {
           //getting data from the body
-          const { title, answer, unit, material, year, turn, youtubeLink } =
+          const { title, answer, unit, material, year, youtubeLink } =
             req.body;
 
           //const parseedYears = JSON.parse(year);
@@ -148,7 +148,6 @@ const setupRoutes = (app) => {
             unit: Joi.string().required(),
             material: Joi.string().required(),
             year: Joi.array().required(),
-            turn: Joi.string().required(),
             youtubeLink,
           });
 
@@ -172,7 +171,6 @@ const setupRoutes = (app) => {
                 unit,
                 material,
                 year,
-                turn,
                 youtubeLink,
               });
 
