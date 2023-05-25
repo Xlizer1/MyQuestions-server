@@ -1,0 +1,393 @@
+[2023-05-24T10:00:02.811] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:00:02.812] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:00:02.814] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:00:02.814] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:00:02.816] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:00:02.816] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:00:02.819] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:00:02.820] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T10:01:02.764] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:01:02.765] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:01:02.767] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:01:02.767] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:02:02.777] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:02:02.778] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:02:02.781] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:02:02.781] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:03:02.780] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:03:02.780] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:03:02.781] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:03:02.781] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:04:02.790] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:04:02.790] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:04:02.791] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:04:02.792] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:05:02.804] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:05:02.805] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:05:02.806] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:05:02.807] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:06:02.811] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:06:02.812] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:06:02.815] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:06:02.816] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:07:02.817] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:07:02.817] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:07:02.819] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:07:02.819] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:08:02.819] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:08:02.819] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:08:02.822] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:08:02.822] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:09:02.818] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:09:02.818] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:09:02.819] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:09:02.819] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:10:02.821] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:10:02.822] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:10:02.823] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:10:02.824] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:11:02.823] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:11:02.823] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:11:02.825] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:11:02.826] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:12:02.825] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:12:02.826] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:12:02.828] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:12:02.828] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:13:02.836] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:13:02.837] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:13:02.838] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:13:02.838] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:14:02.849] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:14:02.849] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:14:02.850] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:14:02.851] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:15:02.852] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:15:02.852] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:15:02.854] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:15:02.855] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:16:02.857] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:16:02.858] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:16:02.859] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:16:02.859] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:17:02.859] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:17:02.860] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:17:02.862] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:17:02.863] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:18:02.866] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:18:02.866] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:18:02.870] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:18:02.871] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:19:02.866] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:19:02.866] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:19:02.867] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:19:02.868] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:20:02.873] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:20:02.874] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:20:02.877] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:20:02.878] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:21:02.876] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:21:02.876] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:21:02.878] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:21:02.878] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:22:02.880] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:22:02.880] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:22:02.882] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:22:02.882] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:23:02.892] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:23:02.893] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:23:02.894] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:23:02.895] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:24:02.896] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:24:02.897] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:24:02.899] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:24:02.900] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:25:02.900] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:25:02.900] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:25:02.902] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:25:02.903] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:26:02.916] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:26:02.917] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:26:02.919] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:26:02.920] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:27:02.918] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:27:02.919] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:27:02.921] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:27:02.921] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:28:02.932] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:28:02.932] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:28:02.934] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:28:02.934] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:29:02.933] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:29:02.934] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:29:02.935] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:29:02.935] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:30:02.945] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:30:02.945] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:30:02.947] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:30:02.948] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:31:02.948] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:31:02.949] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:31:02.952] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:31:02.952] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:32:02.954] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:32:02.955] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:32:02.955] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:32:02.955] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:33:02.966] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:33:02.966] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:33:02.969] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:33:02.969] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:34:02.968] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:34:02.969] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:34:02.971] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:34:02.972] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:35:02.973] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:35:02.973] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:35:02.974] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:35:02.974] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:36:02.979] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:36:02.979] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:36:02.981] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:36:02.981] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:37:02.992] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:37:02.993] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:37:02.994] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:37:02.994] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:38:03.007] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:38:03.008] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:38:03.009] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:38:03.010] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:39:03.013] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:39:03.014] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:39:03.015] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:39:03.015] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:40:03.014] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:40:03.015] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:40:03.016] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:40:03.017] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:41:03.028] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:41:03.029] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:41:03.032] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:41:03.034] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:42:03.042] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:42:03.042] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:42:03.043] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:42:03.044] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:43:03.055] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:43:03.056] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:43:03.057] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:43:03.057] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:44:03.062] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:44:03.062] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:44:03.063] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:44:03.063] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:45:03.065] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:45:03.066] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:45:03.067] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:45:03.068] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:46:03.073] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:46:03.074] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:46:03.075] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:46:03.076] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:47:03.089] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:47:03.090] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:47:03.091] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:47:03.091] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:48:03.092] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:48:03.093] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:48:03.095] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:48:03.095] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:49:03.104] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:49:03.104] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:49:03.105] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:49:03.105] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:50:03.120] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:50:03.121] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:50:03.122] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:50:03.123] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:51:03.123] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:51:03.124] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:51:03.126] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:51:03.126] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:52:03.137] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:52:03.138] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:52:03.139] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:52:03.139] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:53:03.148] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:53:03.149] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:53:03.150] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:53:03.151] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:54:03.163] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:54:03.164] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:54:03.166] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:54:03.166] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:03.177] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:55:03.177] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:03.179] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:55:03.179] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:55.087] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:55:55.088] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:55.089] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:55:55.090] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:55.091] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:55:55.091] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:55:55.093] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:55:55.094] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T10:56:17.290] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:56:17.291] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:17.292] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:56:17.293] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:17.294] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:56:17.295] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:17.296] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:56:17.296] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T10:56:28.262] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:56:28.262] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:28.264] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:56:28.264] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:28.265] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:56:28.266] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:56:28.267] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:56:28.268] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T10:57:28.248] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:57:28.249] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:57:28.251] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:57:28.251] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:58:24.500] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:58:24.500] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:58:24.501] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:58:24.502] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:58:24.503] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:58:24.503] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:58:24.504] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:58:24.505] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T10:59:00.480] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T10:59:00.481] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:59:00.482] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T10:59:00.483] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:59:00.484] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T10:59:00.484] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T10:59:00.485] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T10:59:00.485] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T11:02:33.054] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T11:02:33.055] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:02:33.058] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T11:02:33.060] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:02:33.062] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T11:02:33.064] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:02:33.067] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T11:02:33.070] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-24T11:03:12.091] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 2
+[2023-05-24T11:03:12.092] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:03:12.093] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 5
+[2023-05-24T11:03:12.094] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:03:12.095] [ERROR] errors - getSettingsql: SELECT `id`, `setting_key`, `setting_value`,  `setting_type`, `enabled`,  `updated_at` from settings  where id = 1
+[2023-05-24T11:03:12.095] [ERROR] errors - getSetting: Error: ER_NO_SUCH_TABLE: Table 'myquestions.settings' doesn't exist
+[2023-05-24T11:03:12.097] [ERROR] errors - updateAllExceededAllowedTimeTransactionsql: UPDATE transactions
+            SET
+              note = ' الوصل تعدى الوقت المسموح وهو 24 ساعة',
+              updated_by_id = '0',
+              exceeded_allowed_time = 1,
+             
+              updated_at = NOW()
+            WHERE
+              exceeded_allowed_time = 0
+              AND is_complete = 0
+              AND TIMESTAMPDIFF(HOUR, created_at, NOW()) > 24;
+            
+[2023-05-24T11:03:12.098] [ERROR] errors - updateAllExceededAllowedTimeTransaction: Error: ER_NO_SUCH_TABLE: Table 'myquestions.transactions' doesn't exist
+[2023-05-25T09:21:42.207] [ERROR] errors - adding answer to dbsql: INSERT INTO answers (answer, created_at) 
+  VALUES(asascasc, now())
+[2023-05-25T09:21:42.214] [ERROR] errors - adding answer to db: Error: ER_BAD_FIELD_ERROR: Unknown column 'created_at' in 'field list'
+[2023-05-25T09:22:26.155] [ERROR] errors - adding answer to dbsql: INSERT INTO answers (answer, created_at) 
+  VALUES(asascasc, now())
+[2023-05-25T09:22:26.157] [ERROR] errors - adding answer to db: Error: ER_BAD_FIELD_ERROR: Unknown column 'asascasc' in 'field list'
+[2023-05-25T09:23:30.800] [ERROR] errors - adding answer to dbsql: INSERT INTO answers (answer, created_at) 
+  VALUES(asascasc, now())
+[2023-05-25T09:23:30.803] [ERROR] errors - adding answer to db: Error: ER_BAD_FIELD_ERROR: Unknown column 'asascasc' in 'field list'
+[2023-05-25T09:27:11.695] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (questions, video_link, year, unit_id, subject_id, turn_id, answer_id, created_at)
+    VALUES("undefined", "dsv", 2015, 1, 1, 1, null now())
+[2023-05-25T09:27:11.697] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'now())' at line 2
+[2023-05-25T09:27:41.866] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (questions, video_link, year, unit_id, subject_id, turn_id, answer_id, created_at)
+    VALUES("undefined", "dsv", 2015, 1, 1, 1, null, now())
+[2023-05-25T09:27:41.868] [ERROR] errors - get Questions from db: Error: ER_BAD_FIELD_ERROR: Unknown column 'questions' in 'field list'
+[2023-05-25T10:58:53.956] [ERROR] errors - delete Question from dbsql: DELETE FROM questions WHERE id = undefined
+[2023-05-25T10:58:53.958] [ERROR] errors - delete Question from db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
