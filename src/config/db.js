@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 
-var host = process.env.HOST || "localhost",
-  user = process.env.DB_USER || "root",
-  password = process.env.PASSWORD || "",
-  database = process.env.DATABASE || "wialon_route_notifications";
+var host = process.env.HOST,
+  user = process.env.DB_USER,
+  password = process.env.PASSWORD,
+  database = process.env.DATABASE;
 
 var con;
 
