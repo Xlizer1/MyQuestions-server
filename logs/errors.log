@@ -391,3 +391,13 @@
 [2023-05-25T09:27:41.868] [ERROR] errors - get Questions from db: Error: ER_BAD_FIELD_ERROR: Unknown column 'questions' in 'field list'
 [2023-05-25T10:58:53.956] [ERROR] errors - delete Question from dbsql: DELETE FROM questions WHERE id = undefined
 [2023-05-25T10:58:53.958] [ERROR] errors - delete Question from db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'where clause'
+[2023-05-26T16:32:19.571] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE updated_at = "Null" AND year = 2018
+[2023-05-26T16:32:19.572] [ERROR] errors - get Questions from db: Error: ER_WRONG_VALUE: Incorrect TIMESTAMP value: 'Null'
+[2023-05-27T15:51:43.722] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE question = NOT NULL
+[2023-05-27T15:51:43.724] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'NOT NULL' at line 1
+[2023-05-27T15:52:24.468] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions AND year = "2017"
+[2023-05-27T15:52:24.472] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND year = "2017"' at line 1
+[2023-05-27T15:52:57.679] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions AND year = "2017"
+[2023-05-27T15:52:57.681] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND year = "2017"' at line 1
+[2023-05-27T15:56:27.111] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions AND year = "2017"
+[2023-05-27T15:56:27.118] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND year = "2017"' at line 1

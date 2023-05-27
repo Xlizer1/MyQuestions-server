@@ -1,7 +1,17 @@
 const executeQuery = require("../../helper/common").executeQuery;
 
 async function get(req, callback) {
-  let sql = `SELECT * FROM questions`;
+  let sql = `SELECT * FROM questions WHERE deleted_at is null`;
+  let { search_text, year, unit_id, turn_id, subject_id } = req.query;
+
+  if (search_text) sql += ` AND question = "${search_text}"`;
+  if (year) sql += ` AND year = "${year}"`;
+  if (unit_id) sql += ` AND unit_id = ${unit_id}`;
+  if (turn_id) sql += ` AND turn_id = ${turn_id}`;
+  if (subject_id) sql += ` AND subject_id = ${subject_id}`;
+
+  console.log(sql);
+
   executeQuery(sql, "get Questions from db", (result) => {
     callback(result);
   });
