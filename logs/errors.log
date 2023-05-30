@@ -401,3 +401,69 @@
 [2023-05-27T15:52:57.681] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND year = "2017"' at line 1
 [2023-05-27T15:56:27.111] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions AND year = "2017"
 [2023-05-27T15:56:27.118] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND year = "2017"' at line 1
+[2023-05-29T12:55:28.636] [ERROR] errors - getTotalRowssql: SELECT COUNT(*) AS total_rows FROM car_inspection_details
+[2023-05-29T12:55:28.637] [ERROR] errors - getTotalRows: Error: ER_NO_SUCH_TABLE: Table 'myquestions.car_inspection_details' doesn't exist
+[2023-05-29T12:55:51.251] [ERROR] errors - getTotalRowssql: SELECT COUNT(*) AS total_rows FROM car_inspection_details
+[2023-05-29T12:55:51.252] [ERROR] errors - getTotalRows: Error: ER_NO_SUCH_TABLE: Table 'myquestions.car_inspection_details' doesn't exist
+[2023-05-29T12:56:04.286] [ERROR] errors - getTotalRowssql: SELECT COUNT(*) AS total_rows FROM car_inspection_details
+[2023-05-29T12:56:04.287] [ERROR] errors - getTotalRows: Error: ER_NO_SUCH_TABLE: Table 'myquestions.car_inspection_details' doesn't exist
+[2023-05-29T15:42:00.725] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null ORDER BY created_at DESC LIMIT 0, 10
+[2023-05-29T15:42:00.728] [ERROR] errors - get Questions from db: Error: read ECONNRESET
+[2023-05-29T15:42:00.729] [ERROR] errors - getTotalRowssql: SELECT COUNT(*) AS total_rows FROM questions
+[2023-05-29T15:42:00.729] [ERROR] errors - getTotalRows: Error: Cannot enqueue Query after fatal error.
+[2023-05-29T15:42:17.867] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null ORDER BY created_at DESC LIMIT 0, 10
+[2023-05-29T15:42:17.868] [ERROR] errors - get Questions from db: Error: Cannot enqueue Query after fatal error.
+[2023-05-29T15:42:17.868] [ERROR] errors - getTotalRowssql: SELECT COUNT(*) AS total_rows FROM questions
+[2023-05-29T15:42:17.869] [ERROR] errors - getTotalRows: Error: Cannot enqueue Query after fatal error.
+[2023-05-29T17:44:19.760] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"T"% ORDER BY created_at DESC LIMIT 0, 10
+[2023-05-29T17:44:19.762] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"T"% ORDER BY created_at DESC LIMIT 0, 10' at line 1
+[2023-05-29T17:44:20.344] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"To"% ORDER BY created_at DESC LIMIT 0, 10
+[2023-05-29T17:44:20.346] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"To"% ORDER BY created_at DESC LIMIT 0, 10' at line 1
+[2023-05-29T17:44:20.651] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"To"% ORDER BY created_at DESC LIMIT 10, 10
+[2023-05-29T17:44:20.652] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"To"% ORDER BY created_at DESC LIMIT 10, 10' at line 1
+[2023-05-29T17:44:21.172] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 10, 10
+[2023-05-29T17:44:21.172] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 10, 10' at line 1
+[2023-05-29T17:44:24.042] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 20, 10
+[2023-05-29T17:44:24.044] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 20, 10' at line 1
+[2023-05-29T17:44:25.107] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 30, 10
+[2023-05-29T17:44:25.108] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 30, 10' at line 1
+[2023-05-29T17:44:26.335] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 40, 10
+[2023-05-29T17:44:26.336] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 40, 10' at line 1
+[2023-05-29T17:44:27.490] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 50, 10
+[2023-05-29T17:44:27.490] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 50, 10' at line 1
+[2023-05-29T17:44:27.643] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"To"% ORDER BY created_at DESC LIMIT 50, 10
+[2023-05-29T17:44:27.643] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"To"% ORDER BY created_at DESC LIMIT 50, 10' at line 1
+[2023-05-29T17:44:27.954] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"T"% ORDER BY created_at DESC LIMIT 50, 10
+[2023-05-29T17:44:27.955] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"T"% ORDER BY created_at DESC LIMIT 50, 10' at line 1
+[2023-05-29T17:52:35.734] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"T"% ORDER BY created_at DESC LIMIT 10, 10
+[2023-05-29T17:52:35.736] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"T"% ORDER BY created_at DESC LIMIT 10, 10' at line 1
+[2023-05-29T17:52:36.454] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"To"% ORDER BY created_at DESC LIMIT 10, 10
+[2023-05-29T17:52:36.455] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"To"% ORDER BY created_at DESC LIMIT 10, 10' at line 1
+[2023-05-29T17:52:38.247] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"To"% ORDER BY created_at DESC LIMIT 20, 10
+[2023-05-29T17:52:38.248] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"To"% ORDER BY created_at DESC LIMIT 20, 10' at line 1
+[2023-05-29T17:52:38.844] [ERROR] errors - get Questions from dbsql: SELECT * FROM questions WHERE deleted_at is null AND question like %"Tom"% ORDER BY created_at DESC LIMIT 20, 10
+[2023-05-29T17:52:38.844] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%"Tom"% ORDER BY created_at DESC LIMIT 20, 10' at line 1
+[2023-05-30T11:58:24.547] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, year, unit_id, subject_id, turn_id, created_at)
+    VALUES("سوال واحد", "جواب واحد", "undefined", undefined, 5, 7, 4, now())
+[2023-05-30T11:58:24.552] [ERROR] errors - get Questions from db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T14:21:48.707] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, turn_id, created_at)
+    VALUES("ها", "اي", "", "["2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الثالث"]", 2, 1, null, now())
+[2023-05-30T14:21:48.712] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الث�' at line 2
+[2023-05-30T14:24:55.113] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, turn_id, created_at)
+    VALUES("ها", "اي", "", "["2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الثالث"]", 3, 1, null, now())
+[2023-05-30T14:24:55.116] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الث�' at line 2
+[2023-05-30T14:25:08.926] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, turn_id, created_at)
+    VALUES("ها", "اي", "", "["2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الثالث"]", 3, 1, null, now())
+[2023-05-30T14:25:08.927] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الث�' at line 2
+[2023-05-30T14:25:50.610] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, turn_id, created_at)
+    VALUES("ها", "اي", "", ""[\"2017 - تمهيدي\",\"2015 - الدور الثاني\",\"2021 - الدور الثالث\"]"", 3, 1, null, now())
+[2023-05-30T14:25:50.614] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[\"2017 - تمهيدي\",\"2015 - الدور الثاني\",\"2021 - الدور ' at line 2
+[2023-05-30T14:27:53.335] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("ها", "اي", "", ""[\"2017 - تمهيدي\",\"2015 - الدور الثاني\",\"2021 - الدور الثالث\"]"", 3, 1, now())
+[2023-05-30T14:27:53.339] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '[\"2017 - تمهيدي\",\"2015 - الدور الثاني\",\"2021 - الدور ' at line 2
+[2023-05-30T14:28:31.951] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("ها", "اي", "", "["2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الثالث"]", 3, 1, now())
+[2023-05-30T14:28:31.954] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2017 - تمهيدي","2015 - الدور الثاني","2021 - الدور الث�' at line 2
+[2023-05-30T14:36:15.298] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("ششنو", "اي", "", ["2016 - الدور الرابع"], 3, 4, now())
+[2023-05-30T14:36:15.304] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '["2016 - الدور الرابع"], 3, 4, now())' at line 2

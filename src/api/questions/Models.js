@@ -1,19 +1,32 @@
 const executeQuery = require("../../helper/common").executeQuery;
 
 async function get(req, callback) {
-  let sql = `SELECT * FROM questions WHERE deleted_at is null`;
-  let { search_text, year, unit_id, turn_id, subject_id } = req.query;
+  let sql = `SELECT SQL_CALC_FOUND_ROWS * FROM questions WHERE deleted_at is null`;
+  let { page, page_size, search_text, year, unit_id, turn_id, subject_id } =
+    req.query;
 
-  if (search_text) sql += ` AND question = "${search_text}"`;
+  if (search_text) sql += ` AND question like "%${search_text}%"`;
   if (year) sql += ` AND year = "${year}"`;
   if (unit_id) sql += ` AND unit_id = ${unit_id}`;
   if (turn_id) sql += ` AND turn_id = ${turn_id}`;
   if (subject_id) sql += ` AND subject_id = ${subject_id}`;
 
-  console.log(sql);
+  sql += ` ORDER BY created_at DESC`;
 
-  executeQuery(sql, "get Questions from db", (result) => {
-    callback(result);
+  const offset = (page - 1) * page_size;
+  const limit = page_size;
+  sql += ` LIMIT ${offset}, ${limit}`;
+
+  sql += `; SELECT FOUND_ROWS() AS total_rows`;
+
+  executeQuery(sql, "get Questions from db", (data) => {
+    const totalRows = data[1][0].total_rows;
+    const response = {
+      data: data[0],
+      totalRows: totalRows,
+      current_page: page,
+    };
+    callback(response);
   });
 }
 
@@ -28,11 +41,11 @@ async function getQuestionById(req, callback) {
 }
 
 async function addQuestion(req, callback) {
-  let { question, video_link, year, unit_id, subject_id, turn_id, answer } =
+  let { question, video_link, yearsAndTurns, unit_id, subject_id, answer } =
     req.body;
 
-  let sql = `INSERT INTO questions (question, answer, video_link, year, unit_id, subject_id, turn_id, created_at)
-    VALUES("${question}", "${answer}", "${video_link}", ${year}, ${unit_id}, ${subject_id}, ${turn_id}, now())`;
+  let sql = `INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("${question}", "${answer}", "${video_link}", '${yearsAndTurns}', ${unit_id}, ${subject_id}, now())`;
 
   executeQuery(sql, "get Questions from db", (result) => {
     callback(result);
