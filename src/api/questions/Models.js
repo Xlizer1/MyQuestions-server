@@ -47,26 +47,27 @@ async function addQuestion(req, callback) {
   let sql = `INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
     VALUES("${question}", "${answer}", "${video_link}", '${yearsAndTurns}', ${unit_id}, ${subject_id}, now())`;
 
-  executeQuery(sql, "get Questions from db", (result) => {
+  executeQuery(sql, "add Question to the db", (result) => {
     callback(result);
   });
 }
 
 async function updateQuestion(req, callback) {
   let id = req.params.id;
-  let { question, video_link, year, unit_id, subject_id, turn_id, answer } =
-    req.body;
+  let { question, answer, video_link, yearsAndTurns, unit_id, subject_id } =
+    req.query;
 
   let sql = `UPDATE questions SET
         question = "${question}",
         answer = "${answer}",
         video_link = "${video_link}",
-        year = ${year},
+        yearsAndTurns = '${yearsAndTurns}',
         unit_id = ${unit_id},
         subject_id = ${subject_id},
-        turn_id = ${turn_id},
         updated_at = now()
         WHERE id = ${id}`;
+
+  console.log(sql);
 
   executeQuery(sql, "update Question in db", (result) => {
     callback(result);

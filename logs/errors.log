@@ -467,3 +467,94 @@
 [2023-05-30T14:36:15.298] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
     VALUES("ششنو", "اي", "", ["2016 - الدور الرابع"], 3, 4, now())
 [2023-05-30T14:36:15.304] [ERROR] errors - get Questions from db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '["2016 - الدور الرابع"], 3, 4, now())' at line 2
+[2023-05-30T15:23:34.797] [ERROR] errors - get Questions from dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("خغرحغبؤغخغخؤخغؤغخرغهؤؤخغخيغؤخففخؤؤخلؤخففخؤفؤههفؤؤخفؤفهفهؤؤهفؤهلؤهلؤهفهفؤهفيهفيفهب", "خارهفؤغخبخغييخففخيؤهفلنؤرخاخارلهؤلهؤلهؤهلرلهؤلهؤلهؤؤهلفهؤلؤهؤهففهؤؤهففهؤ", "", '["2020 - الدور الاول","2021 - الدور الثاني"]', 1, 8, now())
+[2023-05-30T15:23:34.810] [ERROR] errors - get Questions from db: Error: read ECONNRESET
+[2023-05-30T15:28:47.069] [ERROR] errors - add Question to the dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("هيغميءخفاسحغءخغءلمسخسخخغيغحيخفءفمعؤخغؤغخغؤخاؤخغءهفءخفءلهءخفءلخفؤخفءخارامءناءمنغفمؤخغرغخخغرخفؤغخ", "خغرفخرفخغؤخغؤغخؤخغؤاؤاخؤخاهلؤخفؤخغ،خغفهءغخؤخغؤهفؤفهؤفهفؤخغؤغخغؤفخفخؤخغؤهغءخغؤهففؤهؤرفهفؤفخرف٨ب", "", '["2019 - الدور الاول","2020 - الدور الثاني"]', 2, 1, now())
+[2023-05-30T15:28:47.073] [ERROR] errors - add Question to the db: Error: Cannot enqueue Query after fatal error.
+[2023-05-30T15:34:18.128] [ERROR] errors - add Question to the dbsql: INSERT INTO questions (question, answer, video_link, yearsAndTurns, unit_id, subject_id, created_at)
+    VALUES("على حظي بها حزب العدالة والتنمية في حالة فوز هذا الحجي صار مو ", "تمام عندي خوش خطوة بخطوة مع اني صارلي ساعه ", "", '["2020 - الدور الثاني"]', 5, 2, now())
+[2023-05-30T15:34:18.129] [ERROR] errors - add Question to the db: Error: Cannot enqueue Query after fatal error.
+[2023-05-30T20:00:45.017] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 44
+[2023-05-30T20:00:45.019] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T20:02:19.386] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 44
+[2023-05-30T20:02:19.388] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T20:02:46.324] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 44
+[2023-05-30T20:02:46.327] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T20:03:00.800] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 44
+[2023-05-30T20:03:00.802] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T20:04:03.879] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 44
+[2023-05-30T20:04:03.881] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-05-30T21:07:17.965] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "undefined",
+        answer = "undefined",
+        video_link = "undefined",
+        yearsAndTurns = 'undefined',
+        unit_id = undefined,
+        subject_id = undefined,
+        updated_at = now()
+        WHERE id = 4
+[2023-05-30T21:07:17.967] [ERROR] errors - update Question in db: Error: ER_BAD_FIELD_ERROR: Unknown column 'undefined' in 'field list'
+[2023-06-01T09:23:13.125] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "لا بربك",
+        answer = "اي والله شبيك صدكني",
+        video_link = "https://www.youtube.com/watch?v=qvC2bVa7UX4",
+        yearsAndTurns = ["2020 - الدور الثاني","2021 - الدور الثالث"],
+        unit_id = 2,
+        subject_id = 8,
+        updated_at = now()
+        WHERE id = 41
+[2023-06-01T09:23:13.127] [ERROR] errors - update Question in db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '["2020 - الدور الثاني","2021 - الدور الثالث"],
+        uni' at line 5
+[2023-06-01T09:24:41.976] [ERROR] errors - update Question in dbsql: UPDATE questions SET
+        question = "لا بربك",
+        answer = "اي والله شبيك صدكني",
+        video_link = "https://www.youtube.com/watch?v=qvC2bVa7UX4",
+        yearsAndTurns = "["2020 - الدور الثاني","2021 - الدور الثالث"]",
+        unit_id = 2,
+        subject_id = 8,
+        updated_at = now()
+        WHERE id = 41
+[2023-06-01T09:24:41.978] [ERROR] errors - update Question in db: Error: ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2020 - الدور الثاني","2021 - الدور الثالث"]",
+        unit' at line 5
